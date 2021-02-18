@@ -1,0 +1,3 @@
+include ':materialistic'
+include ':app'
+rootProject.name = "Materialistic Demo"

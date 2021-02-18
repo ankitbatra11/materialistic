@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Materialistic Demo</string>
+    <string name="critical_permission">Critical Permission</string>
+    <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
+    <string name="critical_permission_rationale">In order to save screenshots and screen recordings on this device, the app needs access to the device storage. Go to settings to enable the permissions.</string>
+</resources>
