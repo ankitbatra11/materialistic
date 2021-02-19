@@ -1,0 +1,23 @@
+
+name: Draft a release on milestone completion
+
+# Trigger
+on:
+  milestone:
+    types: [closed]
+    
+# Action
+jobs:
+  release:
+    name: Create a release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create milestone release
+        id: create-release-milestone
+        uses: ecampidoglio/auto-release-milestone@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Print the URL of the release draft
+        if: steps.create-release-milestone.outputs.release-url != ''
+        run: echo ${{ steps.create-release-draft.outputs.release-url }}
+        
