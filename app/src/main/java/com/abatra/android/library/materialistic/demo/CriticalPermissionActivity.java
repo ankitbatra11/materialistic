@@ -19,7 +19,7 @@ public class CriticalPermissionActivity extends AppCompatActivity {
         textView.setOnClickListener(v -> finish());
 
         textView = findViewById(R.id.screen_critical_perm_btn_grant_perm);
-        textView.setText(R.string.settings);
+        textView.setText(R.string.grant_permission);
 
         AppCompatImageView appCompatImageView = findViewById(R.id.screen_critical_perm_image);
         appCompatImageView.setImageResource(R.drawable.ic_baseline_perm_media_24);
