@@ -5,6 +5,13 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.abatra.android.library.materialistic.MaterialDropDown;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,5 +22,20 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, CriticalPermissionActivity.class);
             startActivity(intent);
         });
+
+        List<String> items = Arrays.asList("Material", "Drop", "Down");
+        MaterialDropDown materialDropDown = MaterialDropDown.fromView(findViewById(R.id.material_drop_down));
+        materialDropDown.setItems(items)
+                .setSelection(0)
+                .setOnItemClickListener((parent, view, position, id) -> showMessage("onItemClick " + items.get(position)));
+
+        findViewById(R.id.button_get_selection).setOnClickListener(v -> {
+            Optional<Integer> selection = materialDropDown.getSelection();
+            selection.ifPresent(integer -> showMessage("current selection=" + items.get(integer)));
+        });
+    }
+
+    private void showMessage(String message) {
+        Snackbar.make(findViewById(R.id.root), message, Snackbar.LENGTH_LONG).show();
     }
 }

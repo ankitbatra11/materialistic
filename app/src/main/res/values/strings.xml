@@ -5,4 +5,5 @@
     <string name="exit">Exit</string>
     <string name="critical_permission_rationale">In order to save screenshots and screen recordings on this device, the app needs access to the device storage. Go to settings to enable the permissions.</string>
     <string name="grant_permission">Grant permission</string>
+    <string name="get_selection">Get selection</string>
 </resources>

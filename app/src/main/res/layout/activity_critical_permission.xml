@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge>
 
-    <include layout="@layout/screen_critical_permission" />
+    <include layout="@layout/material_screen_critical_permission" />
 
 </merge>
