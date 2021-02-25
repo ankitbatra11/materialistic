@@ -65,7 +65,7 @@ public class MaterialDropDown {
         return this;
     }
 
-    private static class SelectionTracker implements AdapterView.OnItemSelectedListener {
+    static class SelectionTracker implements AdapterView.OnItemSelectedListener {
 
         @Nullable
         private Integer selection;
@@ -79,11 +79,11 @@ public class MaterialDropDown {
         public void onNothingSelected(AdapterView<?> parent) {
         }
 
-        private Optional<Integer> getSelection() {
+        Optional<Integer> getSelection() {
             return Optional.ofNullable(selection);
         }
 
-        private void setSelection(int selection) {
+        void setSelection(int selection) {
             this.selection = selection;
         }
     }
