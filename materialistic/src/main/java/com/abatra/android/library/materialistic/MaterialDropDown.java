@@ -87,15 +87,4 @@ public class MaterialDropDown {
             this.selection = selection;
         }
     }
-
-    public interface OnItemSelectedListener extends AdapterView.OnItemSelectedListener {
-
-        @Override
-        default void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        }
-
-        @Override
-        default void onNothingSelected(AdapterView<?> parent) {
-        }
-    }
 }
