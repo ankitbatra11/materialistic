@@ -1,5 +1,5 @@
 
-name: Draft a release on milestone completion
+name: Create release draft
 
 # Trigger
 on:
@@ -20,4 +20,3 @@ jobs:
       - name: Print the URL of the release draft
         if: steps.create-release-milestone.outputs.release-url != ''
         run: echo ${{ steps.create-release-draft.outputs.release-url }}
-        
