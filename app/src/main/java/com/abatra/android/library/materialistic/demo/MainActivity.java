@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         List<String> items = Arrays.asList("Material", "Drop", "Down");
         MaterialDropDown materialDropDown = MaterialDropDown.fromView(findViewById(R.id.material_drop_down));
         materialDropDown.setItems(items)
-                .setSelection(0)
+                .setSelection(1)
                 .setOnItemClickListener((parent, view, position, id) -> showMessage("onItemClick " + items.get(position)));
 
         findViewById(R.id.button_get_selection).setOnClickListener(v -> {
