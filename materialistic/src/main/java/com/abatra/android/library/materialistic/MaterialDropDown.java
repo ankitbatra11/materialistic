@@ -48,11 +48,11 @@ public class MaterialDropDown {
     }
 
     public MaterialDropDown setSelection(int pos) {
-        selectionTracker.setSelection(pos);
-        dropDown.setSelection(pos);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             dropDown.setText((CharSequence) dropDown.getAdapter().getItem(pos), false);
         }
+        dropDown.setSelection(pos);
+        selectionTracker.setSelection(pos);
         return this;
     }
 
