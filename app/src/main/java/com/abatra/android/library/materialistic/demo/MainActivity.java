@@ -2,10 +2,12 @@ package com.abatra.android.library.materialistic.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.abatra.android.library.materialistic.MaterialDropDown;
+import com.abatra.android.library.materialistic.demo.databinding.ActivityMainBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Arrays;
@@ -17,22 +19,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.critical_permission_btn).setOnClickListener(v -> {
+
+        ActivityMainBinding binding = ActivityMainBinding.inflate(LayoutInflater.from(this));
+        setContentView(binding.getRoot());
+
+        binding.criticalPermissionBtn.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CriticalPermissionActivity.class);
             startActivity(intent);
         });
 
         List<String> items = Arrays.asList("Material", "Drop", "Down");
-        MaterialDropDown materialDropDown = MaterialDropDown.fromView(findViewById(R.id.material_drop_down));
+        MaterialDropDown materialDropDown = MaterialDropDown.fromView(binding.dropDownMaterial.getRoot());
         materialDropDown.setItems(items)
                 .setSelection(1)
                 .setOnItemClickListener((parent, view, position, id) -> showMessage("onItemClick " + items.get(position)));
 
-        findViewById(R.id.button_get_selection).setOnClickListener(v -> {
+        binding.buttonGetSelection.setOnClickListener(v -> {
             Optional<Integer> selection = materialDropDown.getSelection();
             selection.ifPresent(integer -> showMessage("current selection=" + items.get(integer)));
         });
+
+        binding.buttonOpenSettings.setOnClickListener(v -> startActivity(new Intent(v.getContext(), SettingsActivity.class)));
     }
 
     private void showMessage(String message) {
