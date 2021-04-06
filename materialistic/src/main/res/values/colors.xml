@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md_blue_700">#1976d2</color>
+    <color name="md_blue_700_light">#63a4ff</color>
+    <color name="md_blue_700_dark">#004ba0</color>
+    <color name="on_md_blue_700">@android:color/white</color>
+    <color name="on_md_blue_700_light">@android:color/black</color>
+    <color name="on_md_blue_700_dark">@android:color/white</color>
+
+    <color name="md_blue_300">#64b5f6</color>
+    <color name="on_md_blue_300">@android:color/black</color>
+    <color name="md_blue_300_light">#9be7ff</color>
+    <color name="on_md_blue_300_light">@android:color/black</color>
+    <color name="md_blue_300_dark">#2286c3</color>
+    <color name="on_md_blue_300_dark">@android:color/black</color>
+
+    <color name="md_blue_100">#bbdefb</color>
+    <color name="md_blue_900">#0d47a1</color>
+</resources>
