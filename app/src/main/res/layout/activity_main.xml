@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <include
-            android:id="@+id/material_drop_down"
+            android:id="@+id/drop_down_material"
             layout="@layout/material_drop_down"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,9 +36,18 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:text="@string/get_selection"
-            app:layout_constraintBottom_toBottomOf="@id/material_drop_down"
-            app:layout_constraintStart_toEndOf="@id/material_drop_down"
-            app:layout_constraintTop_toTopOf="@id/material_drop_down" />
+            app:layout_constraintBottom_toBottomOf="@id/drop_down_material"
+            app:layout_constraintStart_toEndOf="@id/drop_down_material"
+            app:layout_constraintTop_toTopOf="@id/drop_down_material" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_open_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/settings"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_get_selection" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
