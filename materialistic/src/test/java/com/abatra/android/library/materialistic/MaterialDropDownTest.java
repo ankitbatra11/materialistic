@@ -80,7 +80,7 @@ public class MaterialDropDownTest {
 
         verifySetItems();
         verifySetSelection();
-        verifySetOnItemClickListener();
+        verify(mockedAutoCompleteTextView, times(1)).setOnItemClickListener(any());
     }
 
     private void verifySetItems() {
@@ -91,10 +91,6 @@ public class MaterialDropDownTest {
         assertThat(materialDropDown.getSelection().isPresent(), equalTo(true));
         verify(mockedAutoCompleteTextView, times(1)).setSelection(0);
         verify(mockedAutoCompleteTextView, times(1)).setText("one", false);
-    }
-
-    private void verifySetOnItemClickListener() {
-        verify(mockedAutoCompleteTextView, times(1)).setOnItemClickListener(mockedOnItemClickListener);
     }
 
     @Test
@@ -128,7 +124,6 @@ public class MaterialDropDownTest {
         verify(mockedAutoCompleteTextView, never()).setText(anyString(), anyBoolean());
     }
 
-
     @Test
     public void test_setOnItemClickListener() {
 
@@ -141,6 +136,9 @@ public class MaterialDropDownTest {
 
         assertThat(materialDropDown.getSelection().isPresent(), equalTo(true));
         assertThat(materialDropDown.getSelection().get(), equalTo(1));
+
+        materialDropDown.setOnItemClickListener(null);
+        verify(mockedAutoCompleteTextView, times(1)).setOnItemClickListener(null);
     }
 
     @Test
