@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="device">Device</string>
+    <string name="theme">Theme</string>
     <string name="dark">Dark</string>
     <string name="light">Light</string>
 </resources>

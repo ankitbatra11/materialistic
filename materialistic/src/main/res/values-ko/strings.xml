@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">กลางคืน</string>
+    <string name="light">กลางวัน</string>
+    <string name="theme">ธีม</string>
+</resources>

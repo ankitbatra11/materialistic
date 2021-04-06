@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">Ciemny</string>
+    <string name="light">Lekki</string>
+    <string name="theme">Motyw</string>
+</resources>

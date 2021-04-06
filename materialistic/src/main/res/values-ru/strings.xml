@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">Темная</string>
+    <string name="light">Светлая</string>
+    <string name="theme">Тема</string>
+</resources>

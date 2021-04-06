@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">Sombre</string>
+    <string name="light">Lumière</string>
+    <string name="theme">Thème</string>
+</resources>

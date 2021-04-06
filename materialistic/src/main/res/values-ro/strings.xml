@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">Culoare închisă</string>
+    <string name="light">Culoare deschisă</string>
+    <string name="theme">Stil</string>
+</resources>

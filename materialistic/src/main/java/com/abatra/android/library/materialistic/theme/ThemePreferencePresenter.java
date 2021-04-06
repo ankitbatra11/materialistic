@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 
+import com.abatra.android.library.materialistic.R;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +22,8 @@ public class ThemePreferencePresenter {
     }
 
     public void initializePreference(List<ThemeModel> themeModels) {
+
+        listPreference.setTitle(R.string.theme);
 
         List<ThemeModel> notNullModels = Optional.ofNullable(themeModels).orElse(Collections.emptyList());
         listPreference.setEntries(mapEntries(notNullModels));
