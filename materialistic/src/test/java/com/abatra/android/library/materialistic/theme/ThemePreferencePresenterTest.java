@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 
+import com.abatra.android.library.materialistic.R;
+
 import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
 import org.junit.Test;
@@ -75,6 +77,8 @@ public class ThemePreferencePresenterTest {
     public void testInitialize_withOnPreferenceChangeListener() {
 
         presenter.initializePreference(Arrays.asList(DEFAULT, NIGHT_MODE_YES, NIGHT_MODE_NO));
+
+        verify(mockedListPreference, times(1)).setTitle(R.string.theme);
 
         verify(mockedListPreference, times(1)).setEntries(entriesArgumentCaptor.capture());
         assertThat(entriesArgumentCaptor.getAllValues(), hasSize(1));

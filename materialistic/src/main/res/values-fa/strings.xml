@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">تاریک</string>
+    <string name="light">روشن</string>
+    <string name="theme">موضوع</string>
+</resources>

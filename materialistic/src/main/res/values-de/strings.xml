@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dark">Dunkel</string>
+    <string name="light">Hell</string>
+    <string name="theme">Oberflächenstil</string>
+</resources>

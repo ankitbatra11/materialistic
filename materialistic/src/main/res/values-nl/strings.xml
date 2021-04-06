@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">Donker</string>
+    <string name="light">Licht</string>
+    <string name="theme">Thema</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">Karanlık</string>
+    <string name="light">Işık</string>
+    <string name="theme">Tema</string>
+</resources>

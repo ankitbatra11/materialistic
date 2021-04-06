@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="dark">深</string>
+    <string name="light">浅</string>
+    <string name="theme">主题</string>
+</resources>
