@@ -12,6 +12,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -133,7 +134,13 @@ public class MaterialDropDownTest {
 
         materialDropDown.setOnItemClickListener(mockedOnItemClickListener);
 
-        verifySetOnItemClickListener();
+        ArgumentCaptor<AdapterView.OnItemClickListener> captor = ArgumentCaptor.forClass(AdapterView.OnItemClickListener.class);
+        verify(mockedAutoCompleteTextView, times(1)).setOnItemClickListener(captor.capture());
+        captor.getValue().onItemClick(null, null, 1, 0);
+        verify(mockedOnItemClickListener, times(1)).onItemClick(null, null, 1, 0);
+
+        assertThat(materialDropDown.getSelection().isPresent(), equalTo(true));
+        assertThat(materialDropDown.getSelection().get(), equalTo(1));
     }
 
     @Test

@@ -35,7 +35,9 @@ public class MaterialDropDown {
     }
 
     public MaterialDropDown setItems(List<String> items, int selection, AdapterView.OnItemClickListener onItemClickListener) {
-        return setItems(items).setSelection(selection).setOnItemClickListener(onItemClickListener);
+        return setItems(items)
+                .setSelection(selection)
+                .setOnItemClickListener(onItemClickListener);
     }
 
     public MaterialDropDown setItems(List<String> items) {
@@ -60,9 +62,18 @@ public class MaterialDropDown {
         return selectionTracker.getSelection();
     }
 
-    public MaterialDropDown setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
-        dropDown.setOnItemClickListener(onItemClickListener);
+    public MaterialDropDown setOnItemClickListener(@Nullable AdapterView.OnItemClickListener onItemClickListener) {
+        dropDown.setOnItemClickListener(wrapOnItemClickListener(onItemClickListener));
         return this;
+    }
+
+    private AdapterView.OnItemClickListener wrapOnItemClickListener(@Nullable AdapterView.OnItemClickListener onItemClickListener) {
+        return Optional.ofNullable(onItemClickListener)
+                .map(l -> (AdapterView.OnItemClickListener) (parent, view, position, id) -> {
+                    setSelection(position);
+                    l.onItemClick(parent, view, position, id);
+                })
+                .orElse(null);
     }
 
     static class SelectionTracker implements AdapterView.OnItemSelectedListener {
@@ -72,7 +83,7 @@ public class MaterialDropDown {
 
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            selection = position;
+            setSelection(position);
         }
 
         @Override
