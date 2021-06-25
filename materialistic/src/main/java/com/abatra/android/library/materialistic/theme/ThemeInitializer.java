@@ -11,8 +11,8 @@ import java.util.concurrent.Executor;
 
 import bolts.Task;
 
-import static com.abatra.android.wheelie.thread.BoltsUtils.getResult;
-import static com.abatra.android.wheelie.thread.SaferTask.callOn;
+import static com.abatra.android.wheelie.core.async.bolts.BoltsUtils.getResult;
+import static com.abatra.android.wheelie.core.async.bolts.SaferTask.callOn;
 
 abstract public class ThemeInitializer implements Initializer<Integer> {
 
@@ -25,7 +25,7 @@ abstract public class ThemeInitializer implements Initializer<Integer> {
             getResult(task).ifPresent(AppCompatDelegate::setDefaultNightMode);
             return null;
         });
-        return null;
+        return 0;
     }
 
     @WorkerThread
